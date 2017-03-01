@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>let and const</title>
+</head>
+<body>
+<script>
+    /**
+     * let
+     *
+     * can be updated, block-scoped.
+     */
+    let points = 100;
+    console.log(`Declared & assigned: ${points}`);
+    //let points = 200; // can not be re-declared.
+    points = 50;
+    console.log(`Re-assigned: ${points}`);
+
+    let winner = false;
+    if (points > 40) {
+        let winner = true;
+        console.log(`Inside block (winner): ${winner}`);
+    }
+    console.log(`Outside block (winner): ${winner}`);
+
+    /**
+     * const
+     *
+     * can not be updated or re-assigned, block-scoped.
+     * Note: Object.freeze() can be used to make the object attributes immutable.
+     */
+    const key = 'abc123';
+    console.log(`Declared & assigned (const): ${key}`);
+    //key = 'xyz456'; // constant variable can not be re-assigned.
+
+    const person = {
+        name: 'Sumon',
+        age: 27
+    };
+    console.log(`Declared & assigned (const): ${person}`);
+
+    //const person = {name: 'Sumon'} // constant variable can not be re-assigned.
+
+    person.age = 28;
+    console.log(`Attributes changed (const): ${person}`);
+</script>
+</body>
+</html>

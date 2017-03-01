@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>var</title>
+</head>
+<body>
+<script>
+    /**
+     * var (deprecated)
+     *
+     * can be re-assigned, function-scoped.
+     */
+    var points = 100;
+    console.log(`Assigned:  ${points}`);
+    var points = 200;
+    console.log(`Re-assigned: ${points}`);
+
+    function setWidth() {
+        var width = 100;
+        console.log(`Inside function: ${width}`);
+    }
+    setWidth();
+    //console.log(width); // function-scoped, not available here.
+
+    var age = 100;
+    if (age > 12) {
+        var dogYears = age * 7;
+        console.log(`Inside block: You are ${dogYears} dog years old!`);
+    }
+    console.log(`Outside block: ${dogYears}`); // not block-scoped. available here.
+</script>
+</body>
+</html>
