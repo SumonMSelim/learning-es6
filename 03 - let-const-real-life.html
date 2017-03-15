@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>let and const in real life</title>
+</head>
+<body>
+<script>
+    /**
+     * let and const are block scoped.
+     */
+    {
+        const name = 'sumon';
+        let age = 26;
+        console.log(`Name: ${name} - Age: ${age}`);
+    }
+
+    for (let i = 0; i < 10; i++) {
+        console.log(i);
+        setTimeout(function () {
+            console.log(`The number is: ${i}`);
+        }, 1000);
+    }
+</script>
+</body>
+</html>
