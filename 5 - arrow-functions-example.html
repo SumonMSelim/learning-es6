@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>array functions</title>
+</head>
+<body>
+<script>
+    const exam = 'Final';
+    const students = ['Sumon Selim', 'Galib Hossain', 'Salahuddin Rana'];
+
+    const pass = students.map((student, i) => ({
+        name: student,
+        exam, // if the key value is redundant, we can only use the name once.
+        place: i + 1
+    }));
+    console.table(pass);
+
+    const marks = [30, 69, 98, 90, 99, 26, 45];
+    const passed = marks.filter(mark => mark >= 40);
+    console.log(passed);
+</script>
+</body>
+</html>
