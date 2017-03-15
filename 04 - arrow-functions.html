@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>array functions</title>
+</head>
+<body>
+<script>
+    const days = ['Saturday', 'Friday', 'Thursday'];
+
+    const daysMessage = days.map(function (day) {
+        return `Today is ${day}`;
+    });
+    console.log(daysMessage);
+
+    /**
+     * arrow functions.
+     * arrow functions are anonymous functions, has no name.
+     */
+    const daysMessage1 = days.map((day) => {
+        return `Today is ${day}`;
+    });
+    console.log(daysMessage1);
+
+    // single argument need no parentheses
+    const daysMessage2 = days.map(day => {
+        return `Today is ${day}`;
+    });
+    console.log(daysMessage2);
+
+    // implicit return
+    const daysMessage3 = days.map(day => `Today is ${day}`);
+    console.log(daysMessage3);
+
+    // no argument
+    const daysMessage4 = days.map(() => `Today is undefined`);
+    console.log(daysMessage4);
+</script>
+</body>
+</html>
