@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrow functions & this</title>
+    <style>
+        .wrap {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: 100;
+            color: white;
+        }
+
+        .box {
+            background: black url(https://unsplash.it/1500/1500?image=560&blur=0.5) center fixed no-repeat;
+            width: 50px;
+            height: 50px;
+            padding: 85px;
+            transition: width 0.2s, height 0.6s;
+            position: relative;
+        }
+
+        .box.opening {
+            width: 500px;
+            height: 500px;
+        }
+
+        .box h2 {
+            position: absolute;
+            width: 100%;
+            font-size: 100px;
+            transform: translateX(-200%);
+            transition: all 0.5s;
+            top: 0;
+        }
+
+        .box p {
+            position: absolute;
+            width: 100%;
+            transform: translateX(200%);
+            transition: all 0.5s;
+            bottom: 0;
+        }
+
+        .box.open > * {
+            transform: translateX(0%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="box">
+        <h2>Sumon</h2>
+        <p class="social">@SumonMSelim</p>
+    </div>
+</div>
+
+<script>
+    const box = document.querySelector('.box');
+    box.addEventListener('click', function () {
+        let first = 'opening';
+        let second = 'open';
+
+        if (this.classList.contains(first)) {
+            [first, second] = [second, first]; // swap variable values
+        }
+
+        this.classList.toggle(first);
+        setTimeout(() => {
+            this.classList.toggle(second);
+        }, 500);
+    });
+</script>
+</body>
+</html>
