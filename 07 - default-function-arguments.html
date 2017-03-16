@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrow functions & this</title>
+</head>
+<body>
+<script>
+    function calculateFare(distance, minutes, discount = 5) {
+        return distance * 10 + minutes * 1 + discount;
+    }
+
+    const totalFare = calculateFare(20, 60);
+    console.log(`Total fare: ${totalFare}`);
+</script>
+</body>
+</html>
+
