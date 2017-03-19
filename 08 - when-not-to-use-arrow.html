@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>when not to use arrow function</title>
+    <style>
+        button {
+            font-size: 100px;
+        }
+
+        .on {
+            background: #2c2c2c;
+        }
+    </style>
+</head>
+<body>
+<button id="clicky">Click me</button>
+
+<script>
+    /** when you really need `this` */
+    const button = document.querySelector('#clicky');
+    button.addEventListener('click', function () {
+        this.classList.toggle('on');
+    });
+
+    /** when you need a method to bind an object */
+    const person = {
+        points: 23,
+        score() {
+            this.points++;
+        }
+    };
+    person.score();
+    console.log(person);
+
+    /** when you need to add a prototype method */
+    class Coffee {
+        constructor(type, price) {
+            this.type = type;
+            this.price = price;
+        }
+    }
+
+    Coffee.prototype.summarize = function () {
+        return `This is ${this.type} and price is ${this.price} BDT`;
+    };
+
+    const latte = new Coffee('latte', 250);
+    const capuccino = new Coffee('capuccino', 300);
+    console.log(latte.summarize());
+    console.log(capuccino.summarize());
+
+    /** when you need arguments object */
+    const orderChildren = function () {
+        const children = Array.from(arguments);
+        return children.map((child, i) => {
+            return `${child} was child #${i + 1}`;
+        });
+    };
+    console.log(orderChildren('Sumon', 'Selim', 'Sumi'));
+</script>
+</body>
+</html>
