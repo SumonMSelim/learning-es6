@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template strings looping</title>
+</head>
+<body>
+<script>
+    const persons = [
+        {name: 'Galib Hossain', age: 25},
+        {name: 'Tohidul Islam', age: 25},
+        {name: 'Zillur Rahman', age: 26}
+    ];
+
+    const markup = `
+        <ul class="persons">
+            ${persons.map(person => `
+                <li>
+                    ${person.name} is ${person.age} is years old
+                </li>`).join('')
+            }
+        </ul>
+    `;
+
+    document.body.innerHTML = markup;
+</script>
+</body>
+</html>

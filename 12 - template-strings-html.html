@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template strings html</title>
+</head>
+<body>
+<script>
+    const person = {
+        name: 'Sumon Selim',
+        job: 'Software Engineer',
+        city: 'Dhaka',
+        bio: 'Home sapiens by born. Coder by heart. Entrepreneur by passion.'
+    };
+
+    const markup = `
+        <div class="person">
+            <h2>
+                ${person.name}
+                <span class="job">${person.job}</span>
+            </h2>
+            <p class="location">${person.city}</p>
+            <p class="bio">${person.bio}</p>
+        </div>
+    `;
+
+    document.body.innerHTML = markup;
+</script>
+</body>
+</html>

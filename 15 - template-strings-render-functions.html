@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template strings render functions</title>
+</head>
+<body>
+<script>
+    const song = {
+        name: "Don't let me down",
+        artist: "Chainsmokers",
+        featuring: "Daya",
+        keywords: ['daya', 'chainsmokers', 'song']
+    };
+
+    function renderKeywords(keywords) {
+        return `
+            <ul>
+                ${song.keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+            </ul>
+        `;
+    }
+
+    const markup = `
+        <div class="song">
+            <h2>
+                ${song.name}
+            </h2>
+            <p class="artist">
+                ${song.artist}
+                ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+            </p>
+            ${renderKeywords(song.keywords)}
+        </div>
+    `;
+
+    document.body.innerHTML = markup;
+</script>
+</body>
+</html>

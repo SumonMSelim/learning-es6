@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template strings if</title>
+</head>
+<body>
+<script>
+    const song = {
+        name: "Don't let me down",
+        artist: "Chainsmokers",
+        featuring: "Daya"
+    };
+
+    const markup = `
+        <div class="song">
+            <h2>
+                ${song.name}
+            </h2>
+            <p class="artist">
+                ${song.artist}
+                ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+            </p>
+        </div>
+    `;
+
+    document.body.innerHTML = markup;
+</script>
+</body>
+</html>
