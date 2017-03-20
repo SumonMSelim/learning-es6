@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrow functions exercise 1</title>
+</head>
+<body>
+<ul>
+    <li data-time="5:17">Flexbox video</li>
+    <li data-time="7:56">Video 2</li>
+    <li data-time="1:13">Flexbox video</li>
+    <li data-time="2:26">Flexbox video</li>
+    <li data-time="3:39">Flexbox video</li>
+    <li data-time="4:20">Video 6</li>
+    <li data-time="5:39">Flexbox video</li>
+</ul>
+
+<script>
+    // select all the list items on the page and convert to array
+    const videos = Array.from(document.querySelectorAll('ul>li'));
+
+    const filtered = videos
+    // filter for only the elements that contain the word 'flexbox'
+        .filter(video => video.textContent.includes('Flexbox'))
+        // map down to a list of time strings
+        .map(video => video.dataset.time)
+        // map to an array of seconds
+        .map(duration => {
+            const parts = duration.split(':');
+            return parseInt(parts[0] * 60) + parseInt(parts[1]);
+        })
+        // reduce to get total
+        .reduce((totalSeconds, seconds) => totalSeconds + seconds, 0);
+
+    console.log(filtered);
+</script>
+</body>
+</html>
