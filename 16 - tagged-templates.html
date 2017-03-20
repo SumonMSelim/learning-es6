@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tagged templates</title>
+    <style>
+        .h1 {
+            background: #ffc600;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function highlight(strings, ...values) {
+        let str = '';
+        strings.forEach((string, i) => {
+            str += `${string} <span class="h1" contenteditable>${values[i] || ''}</span>`;
+        });
+        return str;
+    }
+
+    const name = 'galib';
+    const age = 26;
+
+    const sentence = highlight`My friend's name is ${name} and he is ${age} years old`;
+
+    document.body.innerHTML = sentence;
+</script>
+</body>
+</html>
