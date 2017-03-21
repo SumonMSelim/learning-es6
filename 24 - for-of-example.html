@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for looping with of</title>
+</head>
+<body>
+<p>Hi, I am p1</p>
+<p>Hi, I am p2</p>
+<p>Hi, I am p3</p>
+<p>Hi, I am p4</p>
+<p>Hi, I am p5</p>
+<p>Hi, I am p6</p>
+<script>
+    const cuts = ['Sumon', 'Galib', 'Foysal', 'Rashed'];
+    /** for of with array */
+    for (const [i, cut] of cuts.entries()) {
+        console.log(`${cut} is the ${i + 1} item`);
+    }
+
+    /** for of with object */
+    function addNumbers() {
+        let total = 0;
+        for (const num of arguments) {
+            total += num;
+        }
+        console.log(`Total: ${total}`);
+    }
+    addNumbers(1, 2, 3, 4, 10, 33);
+
+    /** for of with dom elements */
+    const ps = document.querySelectorAll('p');
+    for (const paragraph of ps) {
+        paragraph.addEventListener('click', function () {
+            console.log(this.textContent);
+        });
+    }
+</script>
+</body>
+</html>
