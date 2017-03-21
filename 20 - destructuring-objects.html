@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>destructuring objects</title>
+</head>
+<body>
+<script>
+    const person = {
+        first: 'Sumon',
+        last: 'Selim',
+        country: 'Bangladesh',
+        city: 'Dhaka',
+        twitter: '@SumonMSelim'
+    };
+    /** Object Destructuring */
+    const {first, last, twitter} = person;
+    console.log(`${first} ${last} - ${twitter}`);
+
+    const sumon = {
+        first: 'Sumon',
+        last: 'Selim',
+        links: {
+            social: {
+                facebook: 'https://www.facebook.com/SumonMSelim',
+                twitter: 'https://www.twitter.com/SumonMSelim'
+            }
+        },
+        web: {
+            blog: 'https://www.sumonselim.com'
+        }
+    };
+    /** Object Destructuring with variable renaming */
+    const {twitter: tweet, facebook: fb} = sumon.links.social;
+    console.log(`Twitter: ${tweet}`);
+    console.log(`Facebook: ${fb}`);
+
+    const settings = {width: 300, color: 'black'};
+    /** Object Destructuring with default values */
+    const {width = 100, height = 200, color = 'blue', fontSize = 25} = settings;
+    console.log(`Width: ${width}`);
+    console.log(`Height: ${height}`);
+    console.log(`Color: ${color}`);
+    console.log(`Font Size: ${fontSize}`);
+</script>
+</body>
+</html>
