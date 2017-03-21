@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string methods</title>
+</head>
+<body>
+<script>
+    const flightNumber = '20-AC2018-jz';
+    const accountNumber = '825242631RT0001';
+
+    // .startsWith()
+    console.log(flightNumber.startsWith(20));
+    console.log(flightNumber.startsWith('AC', 3)); // takes first 3 chars
+
+    // .endsWith()
+    console.log(accountNumber.endsWith('RT'));
+    console.log(accountNumber.endsWith('RT', 11)); // takes first 11 chars
+
+    // .includes()
+    console.log(flightNumber.includes('AC'));
+
+    // .repeat()
+    console.log(('NaN').repeat(5) + ' Batman!');
+</script>
+</body>
+</html>
