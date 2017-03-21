@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>destructuring arrays</title>
+</head>
+<body>
+<script>
+    const details = ['Sumon Selim', 123, 'sumonselim.com'];
+    const [name, id, website] = details;
+    /** Array Destructuring */
+    console.log(`Name: ${name}`);
+    console.log(`ID: ${id}`);
+    console.log(`Website: ${website}`);
+
+    /** Array Destructuring */
+    const data = 'Cricket,Sports,90210,23';
+    const [itemName, category, sku, inventory] = data.split(',');
+    console.log(`Item Name: ${itemName}`);
+    console.log(`Category: ${category}`);
+    console.log(`SKU: ${sku}`);
+    console.log(`Inventory: ${inventory}`);
+
+    /** Array Destructuring with additional values using rest operator */
+    const team = ['Galib', 'Foysal', 'Sumon', 'Rashed'];
+    const [captain, assistant, ...players] = team;
+    console.log(`Captain: ${captain}`);
+    console.log(`Assistant: ${assistant}`);
+    console.log(`Players: ${players}`);
+</script>
+</body>
+</html>
