@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>the ...spread operator</title>
+</head>
+<body>
+<script>
+    const featured = ['Deep Dish', 'Peperoni', 'Hawaiian'];
+    const speciality = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+    const pizzas = [...featured, 'Vegetable', ...speciality];
+    const fridayPizzas = [...pizzas];
+
+    console.log(fridayPizzas);
+</script>
+</body>
+</html>
