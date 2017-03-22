@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for of with objects</title>
+</head>
+<body>
+<script>
+    const apple = {
+        color: 'Red',
+        size: 'Medium',
+        weight: 50,
+        sugar: 10
+    };
+
+    /** object.entries() coming in es2017 */
+    for (const prop of Object.keys(apple)) {
+        console.log(apple[prop]);
+    }
+</script>
+</body>
+</html>
