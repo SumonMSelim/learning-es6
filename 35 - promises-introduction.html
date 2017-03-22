@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promises</title>
+</head>
+<body>
+<script>
+    const post = fetch('https://www.sumonselim.com/wp-json/wp/v2/posts');
+
+    post.then(data => data.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+</script>
+</body>
+</html>
