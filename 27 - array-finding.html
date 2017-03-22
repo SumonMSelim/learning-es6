@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array .find() and .findIndex()</title>
+</head>
+<body>
+<script>
+    const data = [
+        {
+            "id": 291137,
+            "name": "oh-my-zsh",
+            "full_name": "robbyrussell/oh-my-zsh",
+            "owner": {
+                "login": "robbyrussell",
+                "id": 257,
+                "avatar_url": "https://avatars1.githubusercontent.com/u/257?v=3",
+            },
+            "html_url": "https://github.com/robbyrussell/oh-my-zsh",
+            "description": "A delightful community-driven (with 1,000+ contributors) framework for managing your zsh configuration."
+        },
+        {
+            "id": 1863329,
+            "name": "laravel",
+            "full_name": "laravel/laravel",
+            "owner": {
+                "login": "laravel",
+                "id": 958072,
+                "avatar_url": "https://avatars0.githubusercontent.com/u/958072?v=3"
+            },
+            "html_url": "https://github.com/laravel/laravel",
+            "description": "A PHP Framework For Web Artisans",
+        },
+        {
+            "id": 455600,
+            "name": "hhvm",
+            "full_name": "facebook/hhvm",
+            "owner": {
+                "login": "facebook",
+                "id": 69631,
+                "avatar_url": "https://avatars0.githubusercontent.com/u/69631?v=3"
+            },
+            "html_url": "https://github.com/facebook/hhvm",
+            "description": "A virtual machine designed for executing programs written in Hack and PHP. "
+        },
+        {
+            "id": 458058,
+            "name": "symfony",
+            "full_name": "symfony/symfony",
+            "owner": {
+                "login": "symfony",
+                "id": 143937,
+                "avatar_url": "https://avatars0.githubusercontent.com/u/143937?v=3"
+            },
+            "html_url": "https://github.com/symfony/symfony",
+            "description": "The Symfony PHP framework"
+        }
+    ];
+
+    /** usage of .find() */
+    const repo = data.find(repo => repo.id === 1863329);
+    console.log(repo);
+
+    /** usage of .findIndex() */
+    const postIndex = data.findIndex(repo => repo.id === 458058);
+    console.log(postIndex);
+</script>
+</body>
+</html>
