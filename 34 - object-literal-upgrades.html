@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object literal upgrades</title>
+</head>
+<body>
+<script>
+    const first = 'Sumon';
+    const last = 'Selim';
+    const age = 26;
+    const job = 'Software Engineer';
+
+    /** property value shorthand */
+    const person = {
+        first,
+        last,
+        age,
+        job,
+        pals: ['Galib', 'Foysal']
+    };
+    console.log(person);
+
+    /** method definition shorthand */
+    const modal = {
+        open(selector) {
+
+        },
+        close(selector) {
+
+        }
+    };
+    console.log(modal);
+
+    /** computed property keys */
+    const key = 'pocketColor';
+    const value = '#ffc600';
+
+    function invertColor(color) {
+        return '#' + ('000000' + (0xFFFFFF ^ parseInt(color.substring(1), 16)).toString(16)).slice(-6);
+    }
+
+    const tShirt = {
+        [key]: value,
+        [`${key}Opposite`]: invertColor(value)
+    };
+    console.log(tShirt);
+
+    const keys = ['size', 'color', 'weight'];
+    const values = ['medium', 'red', 100];
+
+    const shirt = {
+        [keys.shift()]: values.shift(),
+        [keys.shift()]: values.shift(),
+        [keys.shift()]: values.shift()
+    };
+    console.log(shirt);
+</script>
+</body>
+</html>
