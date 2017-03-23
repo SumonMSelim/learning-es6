@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>symbols</title>
+</head>
+<body>
+<script>
+    const sumon = Symbol('Sumon'); // unique identifier
+    const person = Symbol('Sumon');
+    console.log(sumon === person);
+
+    const friends = {
+        [Symbol('Galib')]: {gender: 'male', age: 25},
+        [Symbol('Foysal')]: {gender: 'male', age: 24},
+        [Symbol('Foysal')]: {gender: 'male', age: 21},
+    };
+
+    const syms = Object.getOwnPropertySymbols(friends);
+    console.log(syms);
+    const data = syms.map(sym => friends[sym]);
+    console.log(data);
+</script>
+</body>
+</html>
