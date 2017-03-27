@@ -1,0 +1,36 @@
+{
+  "name": "es6-modules",
+  "version": "1.0.0",
+  "description": "Writing es6 modules",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --progress --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SumonMSelim/learning-es6.git"
+  },
+  "keywords": [
+    "es6",
+    "modules"
+  ],
+  "author": "Muhammad Sumon Molla Selim <me@sumonselim.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SumonMSelim/learning-es6/issues"
+  },
+  "homepage": "https://github.com/SumonMSelim/learning-es6#readme",
+  "dependencies": {
+    "flickity": "^2.0.5",
+    "insane": "^2.6.2",
+    "jsonp": "^0.2.1",
+    "lodash": "^4.17.4",
+    "slug": "^0.9.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "webpack": "^2.3.2"
+  }
+}
