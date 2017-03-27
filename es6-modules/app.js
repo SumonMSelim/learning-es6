@@ -1,8 +1,8 @@
-import {uniq} from 'lodash';
-import {apiKey as key, url, sayHi} from './src/config';
+import User, { createURL, gravatar} from './src/user';
 
-sayHi('Sumon');
-console.log(key, url);
+const sumon = new User('Sumon Selim', 'smseleem@gmail.com', 'sumonselim.com');
+const profile = createURL(sumon.name);
+const avatar = gravatar(sumon.email);
 
-const ages = [15, 20, 67, 52, 12, 12];
-console.log(uniq(ages));
+console.log(profile);
+console.log(avatar);
