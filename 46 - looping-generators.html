@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>looping generators</title>
+</head>
+<body>
+<script>
+    function* lyrics() {
+        yield `Anywhere, anytime`;
+        yield `I would do anything for you`;
+        yield `Anything for you`;
+        yield `Yesterday got away`;
+    }
+
+    for (const line of lyrics()) {
+        console.log(line);
+    }
+</script>
+</body>
+</html>
