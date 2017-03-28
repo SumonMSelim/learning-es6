@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>classes</title>
+</head>
+<body>
+<script>
+    /** Class Expression */
+    //    const Dog = class {
+    //    };
+
+    /** Class Declaration */
+    class Dog {
+        constructor(name, breed) {
+            this.name = name;
+            this.breed = breed;
+        }
+
+        bark() {
+            console.log(`Bark Bark! My name is ${this.name}`);
+        }
+
+        cuddle() {
+            console.log(`${this.name} loves his owner!`);
+        }
+
+        /** static method */
+        static info() {
+            console.log(`A dog is better than a cat.`);
+        }
+
+        /** getter method */
+        get description() {
+            console.log(`${this.name} is a ${this.breed}`);
+        }
+
+        /** setter method */
+        set nicknames(value) {
+            this.nick = value.trim();
+        }
+    }
+
+    const snickers = new Dog('Snickers', 'King Charles');
+    const sunny = new Dog('Sunny', 'Golden Doodle');
+
+    snickers.bark();
+    sunny.bark();
+
+    /** getter */
+    snickers.description;
+    sunny.description;
+
+    /** setter */
+    snickers.nicknames = '    King    ';
+    console.log(snickers.nick);
+
+    /** a static method can only be called on it's object */
+    Dog.info();
+</script>
+</body>
+</html>
