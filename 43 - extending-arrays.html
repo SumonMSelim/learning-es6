@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extending arrays</title>
+</head>
+<body>
+<script>
+    class MovieCollection extends Array {
+        constructor(name, ...items) {
+            super(...items);
+            this.name = name;
+        }
+
+        add(movie) {
+            this.push(movie);
+        }
+
+        topRated(limit) {
+            return this.sort((a, b) => a.stars > b.stars ? -1 : 1).slice(0, limit);
+        }
+    }
+
+    const movies = new MovieCollection('My Fav Movies',
+        {name: 'Saw', stars: 8},
+        {name: 'Titanic', stars: 10},
+        {name: 'Red Dragon', stars: 7}
+    );
+    movies.add({name: 'The Silence of The Lambs', stars: 8});
+
+    for (const movie of movies) {
+        console.log(movie);
+    }
+
+    console.table(movies.topRated());
+</script>
+</body>
+</html>
