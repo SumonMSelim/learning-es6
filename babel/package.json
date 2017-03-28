@@ -1,0 +1,22 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "Babel example",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel app.js --watch --out-file app-compiled.js"
+  },
+  "keywords": [
+    "babel",
+    "es6"
+  ],
+  "author": "Muhammad Sumon Molla Selim <me@sumonselim.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0"
+  },
+  "babel": {
+    "presets": ["es2015"]
+  }
+}
