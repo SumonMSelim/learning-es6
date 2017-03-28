@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>generators with ajax</title>
+</head>
+<body>
+<script>
+    function ajax(url) {
+        fetch(url).then(data => data.json()).then(data => dataGen.next(data));
+    }
+
+    function* steps() {
+        const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
+        console.log(beers);
+
+        const sumon = yield ajax('http://api.github.com/users/SumonMSelim');
+        console.log(sumon);
+
+        const posts = yield ajax('https://www.sumonselim.com/wp-json/wp/v2/posts');
+        console.log(posts);
+    }
+
+    const dataGen = steps();
+    dataGen.next(); // kick it off
+</script>
+</body>
+</html>
