@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>proxies phone number</title>
+</head>
+<body>
+<script>
+    const phoneHandler = {
+        set(target, name, value) {
+            target[name] = value.match(/[0-9]/g).join('');
+        },
+        get(target, name) {
+            return target[name].replace(/(\d{3})(\d{4})(\d{4})/, '($1)-$2-$3');
+        }
+    };
+    const phoneNumbers = new Proxy({}, phoneHandler);
+
+    phoneNumbers.home = '+880-17647-33575';
+    phoneNumbers.work = '(880) 1615 882217';
+    console.log(phoneNumbers.home);
+    console.log(phoneNumbers.work);
+</script>
+</body>
+</html>
