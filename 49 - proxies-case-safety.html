@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>proxies case safety</title>
+</head>
+<body>
+<script>
+    const safeHandler = {
+        set(target, name, value) {
+            const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
+
+            if (!(name in target) && likeKey) {
+                throw new Error(`Looks like we already have a(n) ${name} property but with the case of ${likeKey}`);
+            }
+            target[name] = value;
+        }
+    };
+
+    const safety = new Proxy({id: 123}, safeHandler);
+    safety.Id = 200;
+</script>
+</body>
+</html>
