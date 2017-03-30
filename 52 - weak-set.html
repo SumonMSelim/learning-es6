@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weak set</title>
+</head>
+<body>
+<script>
+    /** Weak set can only contain an object, can not be iterated or lopped */
+    let dog1 = {name: 'snickers', age: 3};
+    let dog2 = {name: 'sunny', age: 1};
+
+    const weak = new WeakSet([dog1, dog2]); // no iterator, no clear()
+    console.log(weak);
+
+    dog1 = null;
+    setTimeout(() => {
+        console.log(weak);
+    }, 5000);
+</script>
+</body>
+</html>
