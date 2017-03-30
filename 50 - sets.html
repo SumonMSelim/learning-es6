@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sets</title>
+</head>
+<body>
+<script>
+    const people = new Set(); // contains unique property
+    people.add('Sumon');
+    people.add('Galib');
+    people.add('Foysal');
+
+    console.log(people.size); // size of a set
+    console.log(people.delete('Foysal')); // delete an item
+    console.log(people.values()); // returns set iterator
+
+    for (const person of people) {
+        console.log(person);
+    }
+
+    people.clear(); // clear the whole set
+
+    const students = new Set(['Tawsif', 'Rana', 'Sakib']);
+    console.log(students.values());
+    console.log(students.has('Sakib')); // check if a property exists
+</script>
+</body>
+</html>
