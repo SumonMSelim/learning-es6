@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>metadata with maps</title>
+</head>
+<body>
+<button>Snakes 🐍</button>
+<button>Pizza 🍕</button>
+<button>Ice Cream 🍦</button>
+<button>Coder 💻</button>
+
+<script>
+    const clickCounts = new Map();
+    const buttons = document.querySelectorAll('button');
+
+    buttons.forEach(button => {
+        clickCounts.set(button, 0);
+        button.addEventListener('click', function () {
+            const val = clickCounts.get(this);
+            clickCounts.set(this, val + 1);
+            console.log(clickCounts);
+        });
+    });
+</script>
+</body>
+</html>
