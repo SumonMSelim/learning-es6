@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>maps</title>
+</head>
+<body>
+<script>
+    const dogs = new Map(); // has key and value
+
+    dogs.set('snickers', 3);
+    dogs.set('sunny', 2);
+    dogs.set('puppy', 10);
+    dogs.set('lallu', 5);
+
+    console.log(dogs.get('puppy')); // gets a value by key
+    console.log(dogs.has('puppy')); // checks if a value exists by key
+    console.log(dogs.delete('sunny')); // deletes an item
+
+    console.log(dogs.entries());
+
+    dogs.forEach((value, key) => {
+        console.log(`${key} is ${value} years old!`);
+    });
+
+    for(const [key, value] of dogs) {
+        console.log(`${key} is ${value} years old!`);
+    }
+
+    dogs.clear(); // clears all items
+    console.log(dogs.size);
+</script>
+</body>
+</html>
