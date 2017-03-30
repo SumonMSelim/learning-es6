@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>brunch with sets</title>
+</head>
+<body>
+<script>
+    const brunch = new Set();
+    // as people starts coming in
+    brunch.add('galib');
+    brunch.add('foysal');
+    brunch.add('tawsif');
+    // ready to open
+    const line = brunch.values();
+    console.log(line.next().value);
+    console.log(line.next().value);
+    console.log(line);
+
+    brunch.add('sumi');
+    console.log(line.next().value);
+    console.log(line.next().value);
+</script>
+</body>
+</html>
