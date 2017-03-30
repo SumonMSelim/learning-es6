@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weak maps</title>
+</head>
+<body>
+<script>
+    /** Weak maps can not be iterated or lopped, does not have size */
+    let dog1 = {name: 'snickers'};
+    let dog2 = {name: 'puppy'};
+
+    const strong = new Map();
+    const weak = new WeakMap();
+
+    strong.set(dog1, 'Snickers is the best!');
+    weak.set(dog2, 'Puppy is the best!');
+    console.log(strong);
+    console.log(weak);
+
+    dog1 = null;
+    dog2 = null;
+
+    setTimeout(() => {
+        console.log(strong);
+        console.log(weak);
+    }, 5000);
+</script>
+</body>
+</html>
